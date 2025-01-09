@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import Link from "next/link";
+import CustomLink from "./components/CustomLink";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,6 +25,23 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <nav className="border-b border-gray-500 p-5">
+          <ul className="flex gap-5">
+            <li>
+              <CustomLink path="/">Home</CustomLink>
+            </li>
+            <li>
+              <CustomLink path="/dashboard/analytics">Analytics</CustomLink>
+            </li>
+            <li>
+              <CustomLink path="/dashboard/settings">Settings</CustomLink>
+            </li>
+
+
+
+          </ul>
+
+        </nav>
         {children}
       </body>
     </html>
